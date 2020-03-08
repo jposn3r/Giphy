@@ -1,13 +1,19 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<script src="script.js"></script>
 	<style>
 		#main {
 			width: 200px;
+			text-align: center;
+			margin: 0 auto;
+		}
+		#gifContainer {
+			text-align: center;
+			margin: 0 auto;
 		}
 		h1 {
 			margin: 0px;
+			text-align: center;
 		}
 		button {
 		    background-color: #005DFF;
@@ -32,15 +38,27 @@
 			font-size: 20px;
 			box-sizing: border-box;
 		}
-		
 	</style>
+	<script src="script.js"></script>
 </head>
 <body>
 	<div id="main">
 		<h1>Giphy API</h1>
 		<input id="input" type="text" />
-		<button onclick="randomize()">Randomize</button>
+		<button id="button" onclick="randomize()">Randomize</button>
 	</div>
-
+	<div id="gifContainer"></div>
+	<div id="gifHistoryContainer"></div>
 </body>
 </html>
+<script>
+	var input = document.getElementById("input");
+	// Listen for key up event on the enter key when focused on the form
+	input.addEventListener("keyup", function(event) {
+	if (event.keyCode === 13) {
+		event.preventDefault();
+		// call the buttons onclick function - randomize()
+		document.getElementById("button").click();
+	}
+	});
+</script>

@@ -29,7 +29,7 @@ function randomize() {
         var gif = document.getElementById('gif')
         gif.setAttribute('src', originalGifUrl)
 
-        // Debug
+        // Debugging
         // console.log("ParsedData:")
         // console.log(parsedData.data)
         // console.log('Gif URL:')
@@ -50,9 +50,9 @@ request.onload = function() {
     gif.setAttribute('src', originalGifUrl)
     gif.setAttribute('id', "gif")
 
-    document.body.appendChild(gif)
-    // document.body.appendChild(button)
+    document.getElementById("gifContainer").appendChild(gif)
 
+    // Debugging
     console.log("ParsedData:")
     console.log(parsedData.data)
     console.log('Gif URL:')
