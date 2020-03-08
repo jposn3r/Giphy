@@ -26,8 +26,12 @@ function randomize() {
         var gifUrl = gifData.url
         var originalGifUrl = gifData.images.original.url
 
-        var gif = document.getElementById('gif')
+        // Add a vertical stream of gifs
+        var gif = document.createElement('img')
         gif.setAttribute('src', originalGifUrl)
+        gif.setAttribute('id', "gif:" + originalGifUrl)
+        gifContainer = document.getElementById("gifContainer")
+        gifContainer.insertBefore(gif, gifContainer.childNodes[0]);
 
         // Debugging
         // console.log("ParsedData:")
@@ -48,7 +52,7 @@ request.onload = function() {
 
     var gif = document.createElement('img')
     gif.setAttribute('src', originalGifUrl)
-    gif.setAttribute('id', "gif")
+    gif.setAttribute('id', "gif:" + originalGifUrl)
 
     document.getElementById("gifContainer").appendChild(gif)
 
